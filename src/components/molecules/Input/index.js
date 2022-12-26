@@ -3,7 +3,6 @@ import { Box } from '~/components/atoms/Box'
 import { Icon } from '~/components/atoms/Icon'
 import { Text } from '~/components/atoms/Text'
 import { Touchable } from '~/components/atoms/Touchable'
-import { t } from '~/services/translation'
 
 import * as S from './styles'
 
@@ -12,7 +11,7 @@ export const Input = props => {
   const [focus, setFocus] = useState(false)
 
   const label = () => {
-    if (props?.field_type || props?.label) {
+    if (props?.label) {
       return (
         <Text.SubText
           color={props?.editable ? 'white' : 'white'}
@@ -27,7 +26,7 @@ export const Input = props => {
   const error = () => {
     if (props?.error) {
       return (
-        <Text.SubText mt={5} color="error">
+        <Text.SubText mt={2} color="error">
           {props?.error}
         </Text.SubText>
       )

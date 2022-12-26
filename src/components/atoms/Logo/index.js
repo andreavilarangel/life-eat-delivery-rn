@@ -18,25 +18,25 @@ import { Logo as logo } from '~/assets/images/brand'
 const getSize = size => {
   if (size === 'small') {
     return {
-      width: 120,
-      height: 60,
+      width: 100,
+      height: 100,
     }
   }
   if (size === 'medium') {
     return {
-      width: 190,
-      height: 38,
+      width: 120,
+      height: 120,
     }
   }
   if (size === 'large') {
     return {
-      width: 120,
-      height: 60,
+      width: 150,
+      height: 150,
     }
   }
   return {
-    width: 190,
-    height: 38,
+    width: 170,
+    height: 170,
   }
 }
 

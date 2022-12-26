@@ -3,15 +3,16 @@ export const inputs = [
   {
     inputType: 'box',
     field: 'user',
+    placeholder: 'Celular',
     autoCorrect: false,
     autoCapitalize: 'none',
     returnKeyType: 'next',
-    icon: 'person',
+    icon: 'user',
   },
   {
     inputType: 'box',
     field: 'password',
-    placeholder: 'password',
+    placeholder: 'Senha',
     returnKeyType: 'send',
     icon: 'lock',
     secureText: true,
@@ -19,8 +20,8 @@ export const inputs = [
 ]
 
 export const validationSchema = Yup.object().shape({
-  user: Yup.string().required('required.user'),
-  password: Yup.string().required('required.password'),
+  user: Yup.string().required('Informe seu número de celular'),
+  password: Yup.string().required('Informe sua senha'),
 })
 
 export const initialValues = {

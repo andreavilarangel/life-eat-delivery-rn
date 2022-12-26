@@ -1,11 +1,11 @@
-import React from 'react';
-import {StatusBar, LogBox} from 'react-native';
-import {ThemeProvider} from 'styled-components';
-import FlashMessage from 'react-native-flash-message';
-import {theme} from '~/styles';
-import {Router} from '~/routes';
+import React from 'react'
+import { StatusBar, LogBox } from 'react-native'
+import { ThemeProvider } from 'styled-components'
+import FlashMessage from 'react-native-flash-message'
+import { theme } from '~/styles'
+import { Router } from '~/routes'
 
-LogBox.ignoreAllLogs();
+LogBox.ignoreAllLogs()
 
 const App = () => {
   return (
@@ -19,7 +19,7 @@ const App = () => {
       <Router />
       <FlashMessage position="top" duration={2500} />
     </ThemeProvider>
-  );
-};
+  )
+}
 
-export default App;
+export default App

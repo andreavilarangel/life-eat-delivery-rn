@@ -13,6 +13,12 @@ export const Text = ({ children, ...props }) => (
   <BaseText {...props}>{children}</BaseText>
 )
 
+Text.BigTitle = ({ children, ...props }) => (
+  <BaseText fontSize={32} defaultFont="extraBold" letterSpacing={3} {...props}>
+    {children}
+  </BaseText>
+)
+
 Text.ScreenTitle = ({ children, ...props }) => (
   <BaseText fontSize={24} defaultFont="extraBold" letterSpacing={3} {...props}>
     {children}

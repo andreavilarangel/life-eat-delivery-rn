@@ -61,7 +61,7 @@ const commomProps = props => ({
   placeholderTextColor: S.colors[props?.placeholderTextColor || 'grey'],
   fontFamily: S.fonts.medium,
   fontSize: S.metrics.px(props?.fontSize || 16),
-  color: props?.editable ? 'white' : 'white',
+  color: S.colors.primary,
   textAlignVertical: 'center',
   width: handleGetSize(props).input_width,
   height: '100%',

@@ -61,26 +61,26 @@ export const Form = ({
           <Input
             key={item?.id || `${item?.field}-${index}`}
             {...item}
-            placeholder={item?.field}
+            placeholder={item?.placeholder}
             value={values?.[item?.field]}
             error={!isValid && errors?.[item?.field]}
-            mb={16}
+            mb={12}
             onEndEditing={() => {
-              if (!!validationSchema?.fields?.[field]) {
-                validateField(field)
+              if (!!validationSchema?.fields?.[item?.field]) {
+                validateField(item?.field)
               }
             }}
             onChangeText={text => {
               if (onChangeText) {
-                onChangeText(field, text)
+                onChangeText(item?.field, text)
               }
-              setFieldValue(field, text)
+              setFieldValue(item?.field, text)
             }}
           />
         )
       })}
       {props?.formButton && (
-        <Button mt={8} {...props?.formButton}>
+        <Button mt={4} {...props?.formButton}>
           {props?.formButton?.text || 'Salvar'}
         </Button>
       )}
