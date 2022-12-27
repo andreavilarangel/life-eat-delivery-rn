@@ -5,6 +5,7 @@ import { Button } from '~/components/atoms/Button'
 import { Icon } from '~/components/atoms/Icon'
 import { Loader } from '~/components/atoms/Loader'
 import { Text } from '~/components/atoms/Text'
+import { Avatar } from '~/components/atoms/Avatar'
 import { Form } from '../Form'
 import { authStore } from '~/services/store/auth'
 
@@ -25,6 +26,7 @@ export const Screen = ({ children, ...props }) => {
         description: 'Por favor, tente novamente',
         type: 'danger',
       })
+      setLoading(false)
       return
     }
     const params = {
@@ -39,10 +41,11 @@ export const Screen = ({ children, ...props }) => {
     }
   }
   const renderList = () => {
-    if (props?.list?.length > 0) {
+    if (props?.list?.data?.length > 0) {
+      const { data, renderItem } = props?.list
       return (
         <Box>
-          {props?.list?.map((item, index) => props?.renderItem(item, index))}
+          {data?.map((item, index) => renderItem(item, index))}
           {loadingMore && <Loader />}
         </Box>
       )
@@ -61,7 +64,6 @@ export const Screen = ({ children, ...props }) => {
       <Box>{props?.emptyList && !props?.loading && props?.emptyList()}</Box>
     )
   }
-
   const formButtonOptions = () => {
     if (props?.form?.formButton) {
       return {
@@ -74,23 +76,81 @@ export const Screen = ({ children, ...props }) => {
     }
     return {}
   }
-
   const onLoadMore = async () => {
     setLoadingMore(true)
     await props?.onLoadMore()
     setTimeout(() => setLoadingMore(false), 1000)
+  }
+
+  const header = () => {
+    const { onBack, onAdd, title, subtitle, withAvatar } = props?.header
+    return (
+      <Box
+        bbw={1}
+        borderColor="grey"
+        p={20}
+        pt={10}
+        fullWidth
+        justify="space-between"
+        align="center"
+        flexDir="row">
+        <Box flexDir="row" align="center">
+          {onBack && (
+            <Icon
+              onPress={onBack || (() => navigation?.goBack())}
+              name={'ARROW_LEFT'}
+              color="primary"
+              size={24}
+              mr={16}
+            />
+          )}
+          <Box w={onAdd ? 260 : 'auto'}>
+            {title && <Text.ScreenTitle>{title}</Text.ScreenTitle>}
+            {subtitle && <Text.CardTitle>{subtitle}</Text.CardTitle>}
+          </Box>
+        </Box>
+        {onAdd && (
+          <Icon onPress={onAdd} name={'ADD_CIRCLE'} color="primary" size={30} />
+        )}
+        {withAvatar && <Avatar />}
+      </Box>
+    )
+  }
+
+  const handleList = () => {
+    if (props?.loading) {
+      return <Loader />
+    }
+    if (props?.form) {
+      return (
+        <Form
+          {...props?.form}
+          {...formButtonOptions()}
+          data={props?.form?.data}
+          initialValues={props?.form?.initialValues}
+          validationSchema={props?.form?.validationSchema}
+          getValues={(values, isValid) => {
+            setPayload(values)
+            setIsValid(isValid)
+            props?.form?.getValues && props?.form?.getValues(values)
+          }}
+        />
+      )
+    }
+    if (props?.list) {
+      return (
+        <Box {...props?.listProps} mt={16}>
+          {renderList()}
+        </Box>
+      )
+    }
   }
   return (
     <S.Container>
       {props?.bgImg && (
         <S.BackgroundImg {...props?.bgImgProps} source={props?.bgImg} />
       )}
-      {props?.customHeader && (
-        <S.CustomHeaderContainer>
-          {props?.customHeader()}
-        </S.CustomHeaderContainer>
-      )}
-      {props?.outOfScroll && props?.outOfScroll()}
+      {props?.header && header()}
       <S.KeyboardScroll
         onScroll={(e, i) => {
           let paddingToBottom = 120
@@ -105,60 +165,8 @@ export const Screen = ({ children, ...props }) => {
           }
         }}
         {...props}>
-        {(props?.withBack || props?.onBack || props?.onAdd || props?.title) && (
-          <Box
-            pl={!!props?.align ? 20 : 0}
-            pr={20}
-            fullWidth
-            justify="space-between"
-            flexDir="row">
-            {(!!props?.onBack || !!props?.withBack) && (
-              <Icon
-                onPress={props?.onBack || (() => navigation?.goBack())}
-                name={'ARROW_LEFT'}
-                color="white"
-                size={24}
-                mb={16}
-              />
-            )}
-          </Box>
-        )}
-        <Box flexDir="row" justify="space-between" w={335} align="center">
-          {props?.title && (
-            <Text.ScreenTitle w={props?.onAdd ? 190 : 'auto'}>
-              {props?.title}
-            </Text.ScreenTitle>
-          )}
-          {props?.onAdd && (
-            <S.SmallButton onPress={props?.onAdd?.onPress}>
-              <Text.SubText color="black" defaultFont="semiBold">
-                {props?.onAdd?.text}
-              </Text.SubText>
-            </S.SmallButton>
-          )}
-          {props?.titleRenderButton && props?.titleRenderButton()}
-        </Box>
         {props?.listHeader && props?.listHeader()}
-        {props?.loading && <Loader />}
-        {props?.form && (
-          <Form
-            {...props?.form}
-            {...formButtonOptions()}
-            data={props?.form?.data}
-            initialValues={props?.form?.initialValues}
-            validationSchema={props?.form?.validationSchema}
-            getValues={(values, isValid) => {
-              setPayload(values)
-              setIsValid(isValid)
-              props?.form?.getValues && props?.form?.getValues(values)
-            }}
-          />
-        )}
-        {props?.list && (
-          <Box {...props?.listProps} mt={16}>
-            {renderList()}
-          </Box>
-        )}
+        {handleList()}
         {props?.listFooter && props?.listFooter()}
         {children}
       </S.KeyboardScroll>

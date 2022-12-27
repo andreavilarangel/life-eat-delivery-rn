@@ -6,8 +6,11 @@ import { Screen } from '~/components/molecules/Screen'
 import { inputs, validationSchema, initialValues } from './settings'
 import { TitleSeparator } from './styles'
 import { LoginBG } from '~/assets/images/backgrounds'
+import { authStore } from '~/services/store'
 
 export const Login = ({ navigation }) => {
+  const { setNavigationContainer } = authStore()
+
   const header = () => {
     return (
       <>
@@ -20,7 +23,6 @@ export const Login = ({ navigation }) => {
       </>
     )
   }
-
   const footer = () => {
     return (
       <>
@@ -36,6 +38,10 @@ export const Login = ({ navigation }) => {
     )
   }
 
+  const onLogin = () => {
+    setNavigationContainer('client')
+  }
+
   return (
     <Screen
       bgImg={LoginBG}
@@ -45,7 +51,7 @@ export const Login = ({ navigation }) => {
         validationSchema,
         initialValues,
         formButton: {
-          onPress: () => {},
+          onPress: onLogin,
           text: 'Login',
         },
       }}

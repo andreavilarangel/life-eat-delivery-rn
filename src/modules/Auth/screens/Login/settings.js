@@ -3,6 +3,13 @@ export const inputs = [
   {
     inputType: 'box',
     field: 'user',
+    masked: true,
+    type: 'cel-phone',
+    options: {
+      maskType: 'BRL',
+      withDDD: true,
+      dddMask: '(99) ',
+    },
     placeholder: 'Celular',
     autoCorrect: false,
     autoCapitalize: 'none',

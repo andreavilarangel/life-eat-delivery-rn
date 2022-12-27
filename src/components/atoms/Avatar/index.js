@@ -1,7 +1,6 @@
-// libs
-import React, { useState } from 'react'
-// components
-import { Container, AvatarImage, LoadingBackground, Label } from './styles'
+import React from 'react'
+import { Container, AvatarImage, Label } from './styles'
+import defaultImg from '~/assets/images/backgrounds/user_default_img.png'
 
 export const Avatar = ({
   size,
@@ -9,21 +8,15 @@ export const Avatar = ({
   selectable,
   onPress,
   selected,
-  type,
   label,
-  loading,
-  changePhoto,
   ...props
 }) => {
-  const defaultImg = ''
-  const [image, setImage] = useState(source ? { uri: source } : defaultImg)
-
   return (
     <Container {...props} onPress={onPress} size={size} disabled={!onPress}>
       <AvatarImage
         size={size}
         mb={!!label}
-        source={image}
+        source={source ? { uri: source } : defaultImg}
         resizeMode="cover"
         selectable={selectable}
         selected={selected}

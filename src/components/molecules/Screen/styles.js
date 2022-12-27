@@ -15,22 +15,6 @@ export const Container = styled(Box).attrs(props => ({
   padding-top: ${theme.hp(5)}px;
 `
 
-export const CustomHeaderContainer = styled(Box).attrs(props => ({
-  fullWidth: true,
-  bg: 'backgroundComponent',
-  align: 'flex-start',
-  justifyContent: 'flex-end',
-}))`
-  margin-top: ${theme.hp(-5)}px;
-  padding-top: ${theme.hp(7)}px;
-  padding-left: ${theme.px(20)}px;
-  padding-right: ${theme.px(20)}px;
-  padding-bottom: ${theme.px(20)}px;
-  min-height: ${theme.px(64)}px;
-  border-bottom-width: 0.4px;
-  border-bottom-color: ${theme.grey};
-`
-
 export const KeyboardScroll = styled(KeyboardAwareScrollView).attrs(
   ({ ...props }) => ({
     enableOnAndroid: true,
