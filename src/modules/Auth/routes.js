@@ -18,8 +18,8 @@ export const AuthNavigator = () => (
       <Stack.Screen name="ForgotPassword" component={ForgotPassword} /> */}
     </Stack.Group>
     {/* MODALS */}
-    {/* <Stack.Group screenOptions={{ presentation: 'containedTransparentModal' }}>
-      <Stack.Screen name="ConfirmationModal" component={ConfirmationModal} />
-    </Stack.Group> */}
+    <Stack.Group screenOptions={{ presentation: 'containedTransparentModal' }}>
+      {/* <Stack.Screen name="ConfirmationModal" component={ConfirmationModal} /> */}
+    </Stack.Group>
   </Stack.Navigator>
 )

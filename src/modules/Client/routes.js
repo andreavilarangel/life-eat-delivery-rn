@@ -50,10 +50,10 @@ export const ClientNavigator = () => {
         <Stack.Screen name="HomeTabs" component={HomeTabs} />
       </Stack.Group>
       {/* Modals */}
-      {/* <Stack.Group
+      <Stack.Group
         screenOptions={{ presentation: 'containedTransparentModal' }}>
-        <Stack.Screen name="ProductModal" component={SelectService} />
-      </Stack.Group> */}
+        {/* <Stack.Screen name="ProductModal" component={SelectService} /> */}
+      </Stack.Group>
     </Stack.Navigator>
   )
 }
