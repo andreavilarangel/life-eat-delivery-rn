@@ -26,12 +26,12 @@ export const Login = ({ navigation }) => {
   const footer = () => {
     return (
       <>
-        <Text.Link
-          onPress={() => navigation.navigate('ForgotPassword')}
-          mt={16}>
+        <Text.Link onPress={() => navigation.navigate('CreateAccount')} mt={16}>
           Não possui uma conta? Faça seu cadastro
         </Text.Link>
-        <Text.Link mt={10} onPress={() => navigation.navigate('CreateAccount')}>
+        <Text.Link
+          mt={10}
+          onPress={() => navigation.navigate('ForgotPasswordPhone')}>
           Esqueci minha senha
         </Text.Link>
       </>

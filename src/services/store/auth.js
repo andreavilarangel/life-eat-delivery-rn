@@ -6,7 +6,6 @@ export const authStore = create((set, get) => ({
   user: null,
   setUser: user => set({ user }),
   token: null,
-  usedate: null,
 
   setNavigationContainer: navigationContainer => set({ navigationContainer }),
   setNavigation: navigation => set({ navigation }),

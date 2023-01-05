@@ -97,7 +97,7 @@ export const Screen = ({ children, ...props }) => {
         <Box flexDir="row" align="center">
           {onBack && (
             <Icon
-              onPress={onBack || (() => navigation?.goBack())}
+              onPress={() => navigation.goBack()}
               name={'ARROW_LEFT'}
               color="primary"
               size={24}
@@ -105,7 +105,7 @@ export const Screen = ({ children, ...props }) => {
             />
           )}
           <Box w={onAdd ? 260 : 'auto'}>
-            {title && <Text.ScreenTitle>{title}</Text.ScreenTitle>}
+            {title && <Text.ModalTitle>{title}</Text.ModalTitle>}
             {subtitle && <Text.CardTitle>{subtitle}</Text.CardTitle>}
           </Box>
         </Box>

@@ -4,6 +4,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { BottomBar } from '~/components/organisms/BottomBar'
 
 import { Home } from './screens/Home'
+import { OrderItems } from './screens'
+import { DeliveryAddress } from './screens'
+import { ShoppingCart } from './screens/ShoppingCart'
 
 export const HomeTabs = () => {
   const Tab = createBottomTabNavigator()
@@ -22,13 +25,13 @@ export const HomeTabs = () => {
       />
       <Tab.Screen
         options={{ title: 'Financeiro' }}
-        name="Financeiro"
-        component={Home}
+        name="OrderItems"
+        component={OrderItems}
       />
       <Tab.Screen
         options={{ title: 'Barbearia' }}
-        name="Barbearia"
-        component={Home}
+        name="DeliveryAddress"
+        component={DeliveryAddress}
       />
       <Tab.Screen
         options={{ title: 'Minha Conta' }}
@@ -48,6 +51,9 @@ export const ClientNavigator = () => {
       }}>
       <Stack.Group>
         <Stack.Screen name="HomeTabs" component={HomeTabs} />
+        <Stack.Screen name="ShoppingCart" component={ShoppingCart} />
+        <Stack.Screen name="OrderItems" component={OrderItems} />
+        <Stack.Screen name="DeliveryAddress" component={DeliveryAddress} />
       </Stack.Group>
       {/* Modals */}
       <Stack.Group

@@ -2,6 +2,12 @@ import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 import { Login } from './screens/Login'
+import { CreateAccount } from './screens/CreateAccount'
+import { Delivery } from './screens/Delivery'
+import { ForgotPasswordPhone } from './screens/ForgotPasswordPhone'
+import { ForgotPasswordEmail } from './screens/ForgotPasswordEmail'
+import { ForgotPasswordKey } from './screens/ForgotPasswordKey'
+import { SplashScreen } from './screens'
 
 const Stack = createNativeStackNavigator()
 
@@ -12,10 +18,19 @@ export const AuthNavigator = () => (
     }}>
     {/* // SCREENS */}
     <Stack.Group>
-      {/* <Stack.Screen name="SplashScreen" component={SplashScreen} /> */}
+      <Stack.Screen name="SplashScreen" component={SplashScreen} />
       <Stack.Screen name="Login" component={Login} />
-      {/* <Stack.Screen name="CreateAccount" component={CreateAccount} />
-      <Stack.Screen name="ForgotPassword" component={ForgotPassword} /> */}
+      <Stack.Screen
+        name="ForgotPasswordPhone"
+        component={ForgotPasswordPhone}
+      />
+      <Stack.Screen
+        name="ForgotPasswordEmail"
+        component={ForgotPasswordEmail}
+      />
+      <Stack.Screen name="CreateAccount" component={CreateAccount} />
+      <Stack.Screen name="ForgotPasswordKey" component={ForgotPasswordKey} />
+      <Stack.Screen name="Delivery" component={Delivery} />
     </Stack.Group>
     {/* MODALS */}
     <Stack.Group screenOptions={{ presentation: 'containedTransparentModal' }}>

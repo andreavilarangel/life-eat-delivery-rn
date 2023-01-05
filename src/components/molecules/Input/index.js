@@ -15,7 +15,7 @@ export const Input = props => {
     if (props?.label) {
       return (
         <Text.SubText
-          color={props?.editable ? 'white' : 'white'}
+          color={props?.editable ? 'primary' : 'primary'}
           mb={props?.inputType === 'box' || props?.textArea ? 8 : 0}>
           {props?.label}
         </Text.SubText>
