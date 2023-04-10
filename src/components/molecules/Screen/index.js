@@ -34,7 +34,7 @@ export const Screen = ({ children, ...props }) => {
       ...props?.payload,
     }
     try {
-      await action({ params })
+      await action(params)
       setLoading(false)
     } catch (error) {
       setLoading(false)
@@ -151,6 +151,7 @@ export const Screen = ({ children, ...props }) => {
         <S.BackgroundImg {...props?.bgImgProps} source={props?.bgImg} />
       )}
       {props?.header && header()}
+      {props?.outOfScrollUp && props?.outOfScrollUp()}
       <S.KeyboardScroll
         onScroll={(e, i) => {
           let paddingToBottom = 120
@@ -172,7 +173,7 @@ export const Screen = ({ children, ...props }) => {
       </S.KeyboardScroll>
       {props?.outOfScrollDown && props?.outOfScrollDown()}
       {props?.finalButton && (
-        <S.BackgroundGradient>
+        <S.BackgroundGradient btMb={props?.finalButton?.btMb}>
           <Button
             {...props?.finalButton}
             loading={props?.finalButton?.loading || loading}

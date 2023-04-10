@@ -1,6 +1,8 @@
 import styled from 'styled-components/native'
-export const FoodImage = styled.Image.attrs(({ src, resizeMode }) => ({
-  source: src,
+import { Logo as logo } from '~/assets/images/brand'
+
+export const FoodImage = styled.Image.attrs(({ img, resizeMode }) => ({
+  source: img || logo,
   resizeMode: resizeMode || 'contain',
 }))`
   align-self: center;

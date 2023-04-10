@@ -26,8 +26,9 @@ export const KeyboardScroll = styled(KeyboardAwareScrollView).attrs(
     showsHorizontalScrollIndicator: false,
     keyboardShouldPersistTaps: 'handled',
     contentContainerStyle: {
+      paddingTop: theme.px(20),
       paddingHorizontal: theme.px(20),
-      paddingBottom: theme.px(130),
+      paddingBottom: theme.px(props?.finalButton ? 200 : 130),
       alignItems: props?.align || 'flex-start',
       justifyContent: props?.justify || 'flex-start',
     },
@@ -36,17 +37,18 @@ export const KeyboardScroll = styled(KeyboardAwareScrollView).attrs(
   width: ${theme.wp(100)}px;
 `
 
-export const BackgroundGradient = styled(LinearGradient).attrs(() => ({
-  colors: ['transparent', theme.colors.darkTransparent[8]],
-  locations: [0, 1],
+export const BackgroundGradient = styled(LinearGradient).attrs(({ btMb }) => ({
+  colors: [theme.colors.darkTransparent[2], theme.colors.secondary],
+  locations: [0, 0.2, 0, 0.2],
   width: theme.wp(100),
-  height: theme.px(80),
+  height: theme.px(90),
   paddingHorizontal: theme.px(20),
+  marginBottom: theme.px(btMb || 0),
 }))`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   position: absolute;
   bottom: 0;
 `

@@ -1,1 +1,5 @@
 export * from './Home'
+export * from './OrderDetails'
+export * from './Product'
+export * from './OrderHistory'
+export * from './AddProduct'

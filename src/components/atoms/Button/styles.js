@@ -58,8 +58,8 @@ const handleButtonVariant = props => {
   if (variant === 'outline') {
     return {
       bg: 'transparent',
-      textColor: 'white',
-      borderColor: 'border',
+      textColor: 'primary',
+      borderColor: 'primary',
     }
   }
   if (variant === 'outlinePrimary') {

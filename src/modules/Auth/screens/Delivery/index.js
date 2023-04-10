@@ -5,10 +5,10 @@ import { Box } from '~/components/atoms/Box'
 
 import { inputs, validationSchema, initialValues } from './settings'
 
-export const Delivery = () => {
+export const Delivery = ({ navigation }) => {
   const listHeader = () => {
     return (
-      <Box w="100%" align="center" mt={16} mb={16}>
+      <Box w="100%" align="center" mb={16}>
         <Text.SubText w="100%">
           {
             'Informe o endereço onde você quer que\na gente te entregue as marmitas:'
@@ -27,7 +27,7 @@ export const Delivery = () => {
         validationSchema,
         initialValues,
         formButton: {
-          onPress: null,
+          onPress: () => navigation.navigate('ForgotPasswordPhone'),
           text: 'Salvar',
         },
       }}

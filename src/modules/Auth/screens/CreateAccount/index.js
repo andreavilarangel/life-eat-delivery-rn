@@ -10,11 +10,11 @@ import { Avatar } from '~/components/atoms/Avatar'
 export const CreateAccount = ({ navigation }) => {
   const listHeader = () => {
     return (
-      <Box w="100%" align="center" mt={20}>
+      <Box w="100%" align="center" mb={20}>
         <Text.SubText w="100%">
           {'Seja bem-vindo ao app da Life Eat!\nInforme seus dados abaixo:'}
         </Text.SubText>
-        <Avatar size="bigger" mt={20} mb={20} />
+        <Avatar size="profile" mt={24} label="Alterar foto" />
       </Box>
     )
   }
@@ -30,7 +30,7 @@ export const CreateAccount = ({ navigation }) => {
         validationSchema,
         initialValues,
         formButton: {
-          onPress: null,
+          onPress: () => navigation.navigate('Delivery'),
           text: 'Cadastrar',
         },
       }}

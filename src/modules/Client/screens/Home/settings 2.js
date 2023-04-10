@@ -1,5 +1,28 @@
 import { Marmita } from '~/assets/images/backgrounds'
 
+export const filters = [
+  {
+    id: 1,
+    text: 'Escondidinho',
+  },
+  {
+    id: 2,
+    text: 'Panqueca',
+  },
+  {
+    id: 3,
+    text: 'Refeições',
+  },
+  {
+    id: 4,
+    text: 'Massas',
+  },
+  {
+    id: 5,
+    text: 'Fitness',
+  },
+]
+
 export const foodList = [
   {
     id: 1,
@@ -21,14 +44,14 @@ export const foodList = [
   },
   {
     id: 4,
-    title: 'Escondidinho Batata e Frango',
-    description: 'Feito com batata inglesa e peito frango',
+    title: 'Escondidinho Fitness',
+    description: 'Feito com batata baroa e carne moída',
     image_url: Marmita,
   },
   {
     id: 5,
-    title: 'Escondidinho Batata e Frango',
-    description: 'Feito com batata inglesa e peito frango',
+    title: 'Escondidinho Massa e Carne',
+    description: 'Feito com batata baroa e carne moída',
     image_url: Marmita,
   },
 ]

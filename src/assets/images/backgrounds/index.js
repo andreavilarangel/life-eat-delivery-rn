@@ -1,3 +1,5 @@
 export { default as LoginBG } from './login.png'
 export { default as UserDefault } from './user_default_img.png'
 export { default as Marmita } from './marmita.png'
+export { default as Map } from './map.png'
+export { default as Client } from './client.png'

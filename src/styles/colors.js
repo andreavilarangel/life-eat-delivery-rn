@@ -12,6 +12,8 @@ export const colors = {
   success: '#359925',
   error: '#EA1D2C',
 
+  orange: '#F58500',
+
   transparent: 'transparent',
   grey: '#9A9C9F',
   border: '#363D49',

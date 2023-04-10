@@ -43,6 +43,7 @@ export const BottomBar = ({
     {
       icon: 'CART',
       index: 1,
+      onPress: () => navigation.navigate('OrderItem', { screen: 'OrderItem' }),
     },
     {
       icon: 'HISTORIC',
@@ -89,7 +90,9 @@ export const BottomBar = ({
               w={52}
               key={index}
               justifyContent="center"
-              onPress={() => handleNavigate(routes[route.index])}>
+              onPress={() =>
+                props?.onPress || handleNavigate(routes[route.index])
+              }>
               <Box w="100%" align="center">
                 <Icon
                   size={20}

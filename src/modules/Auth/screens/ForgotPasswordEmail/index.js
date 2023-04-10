@@ -8,7 +8,7 @@ import { inputs, validationSchema, initialValues } from './settings'
 export const ForgotPasswordEmail = ({ navigation }) => {
   const listHeader = () => {
     return (
-      <Box w="100%" align="center" mt={16} mb={16}>
+      <Box w="100%" align="center" mb={16}>
         <Text.SubText w="100%">
           {
             'Confirme seu e-mail abaixo. Enviaremos uma\n chave de acesso para você voltar a acessar a\nsua conta'

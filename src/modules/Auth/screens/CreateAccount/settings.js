@@ -43,14 +43,14 @@ export const inputs = [
 
 export const validationSchema = Yup.object().shape({
   name: Yup.string().required('Informe seu nome completo'),
-  user: Yup.string().required('Informe seu número de celular'),
   email: Yup.string().required('Informe seu email'),
+  user: Yup.string().required('Informe seu número de celular'),
   password: Yup.string().required('Informe sua senha'),
 })
 
 export const initialValues = {
   name: '',
-  user: '',
   email: '',
+  user: '',
   password: '',
 }

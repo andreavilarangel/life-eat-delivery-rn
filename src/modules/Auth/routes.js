@@ -28,9 +28,9 @@ export const AuthNavigator = () => (
         name="ForgotPasswordEmail"
         component={ForgotPasswordEmail}
       />
+      <Stack.Screen name="Delivery" component={Delivery} />
       <Stack.Screen name="CreateAccount" component={CreateAccount} />
       <Stack.Screen name="ForgotPasswordKey" component={ForgotPasswordKey} />
-      <Stack.Screen name="Delivery" component={Delivery} />
     </Stack.Group>
     {/* MODALS */}
     <Stack.Group screenOptions={{ presentation: 'containedTransparentModal' }}>

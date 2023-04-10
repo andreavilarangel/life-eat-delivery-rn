@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
-import { View, Text } from 'react-native'
 import { authStore } from '~/services/store'
+import { LoginBG } from '~/assets/images/backgrounds'
+import { Screen } from '~/components/molecules/Screen'
 import { Logo } from '~/components/atoms/Logo'
 
 export const SplashScreen = ({ navigation }) => {
@@ -13,14 +14,17 @@ export const SplashScreen = ({ navigation }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: '#1B5F1B',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}>
-      <Logo size="large" />
-    </View>
+    <Screen bgImg={LoginBG} align="center">
+      <Logo size="large" mt={300} />
+    </Screen>
+    // <View
+    //   style={{
+    //     flex: 1,
+    //     backgroundColor: '#1B5F1B',
+    //     alignItems: 'center',
+    //     justifyContent: 'center',
+    //   }}>
+    //   <Logo size="large" />
+    // </View>
   )
 }

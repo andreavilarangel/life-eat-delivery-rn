@@ -1,13 +1,20 @@
 import React from 'react'
 import { Screen } from '~/components/molecules/Screen'
-import { Box } from '~/components/atoms/Box'
 
 import { inputs, validationSchema, initialValues } from './settings'
+import { clientStore } from '~/services/store/client'
 
 export const DeliveryAddress = ({ navigation }) => {
-  const listHeader = () => {
-    return <Box w="100%" align="center" mt={16} mb={16} />
+  const { setAddress, useFormStore } = clientStore()
+
+  // Dentro da sua função de formulário
+
+  const handleFormSubmit = async address => {
+    await useFormStore.setState({
+      setAddress: address,
+    })
   }
+
   return (
     <Screen
       header={{
@@ -17,12 +24,14 @@ export const DeliveryAddress = ({ navigation }) => {
         data: inputs,
         validationSchema,
         initialValues,
-        formButton: {
-          onPress: () => navigation.navigate('ShoppingCart'),
-          text: 'Confirmar endereço',
-        },
       }}
-      listHeader={listHeader}
+      finalButton={{
+        btMb: 70,
+        text: 'Confirmar endereço',
+        bg: 'primary',
+        onPress: p => setAddress(p),
+        //onPress: {  },
+      }}
     />
   )
 }
