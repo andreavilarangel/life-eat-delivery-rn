@@ -49,30 +49,14 @@ export const clientStore = create((set, get) => ({
     return
   },
 
-  address: [],
-  setAddress: address => set({ address }),
-}))
-
-const addressStore = set => ({
-  addresses: [],
-  addAddress: address => {
-    set(state => ({
-      addresses: [address, ...state.addresses],
-    }))
+  address: {
+    cep: '',
+    street: '',
+    number: '',
+    complement: '',
+    district: '',
+    city: '',
+    state: '',
   },
-})
-
-export const useFormStore = create(set => ({
-  CEP: '',
-  rua: '',
-  numero: '',
-  complemento: '',
-  bairro: '',
-  cidade: '',
-  estado: '',
-  setAddress: address =>
-    set(state => ({
-      ...state,
-      ...address,
-    })),
+  setAddress: address => set({ address }),
 }))

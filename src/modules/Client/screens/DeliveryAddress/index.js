@@ -5,14 +5,13 @@ import { inputs, validationSchema, initialValues } from './settings'
 import { clientStore } from '~/services/store/client'
 
 export const DeliveryAddress = ({ navigation }) => {
-  const { setAddress, useFormStore } = clientStore()
+  const { setAddress } = clientStore()
 
   // Dentro da sua função de formulário
 
-  const handleFormSubmit = async address => {
-    await useFormStore.setState({
-      setAddress: address,
-    })
+  const handleFormSubmit = address => {
+    setAddress(address)
+    navigation.navigate('ShoppingCart')
   }
 
   return (
@@ -29,8 +28,7 @@ export const DeliveryAddress = ({ navigation }) => {
         btMb: 70,
         text: 'Confirmar endereço',
         bg: 'primary',
-        onPress: p => setAddress(p),
-        //onPress: {  },
+        onPress: p => handleFormSubmit(p),
       }}
     />
   )

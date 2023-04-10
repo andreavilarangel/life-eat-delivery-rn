@@ -9,13 +9,17 @@ import { listFood } from './settings'
 import { formatCurrency } from '~/utils'
 import { WhereToDeliverCard } from '~/components/molecules/Cards/WhereToDeliver'
 import { locationList } from './settings'
+import { clientStore } from '~/services/store/client'
+import { Map } from '~/assets/images/backgrounds'
 
 export const ShoppingCart = ({ navigation }) => {
   const [selected, setSelected] = useState()
+  const { selectedList, address } = clientStore()
 
   const getTotal = () => {
     let total = 0
-    listFood.map(item => (total = total + item.value * item.quantity))
+    selectedList.map(item => (total = total + item.value * item.quantity))
+    //console.log(selectedList)
     return total
   }
 
@@ -25,6 +29,7 @@ export const ShoppingCart = ({ navigation }) => {
         title: 'Carrinho de compras',
       }}
       finalButton={{
+        btMb: 70,
         text: 'Finalizar pedido',
         onPress: null,
         bg: 'primary',
@@ -36,14 +41,12 @@ export const ShoppingCart = ({ navigation }) => {
         justify="space-between"
         mb={16}>
         <Text.SectionTitle>Itens escolhidos</Text.SectionTitle>
-        <Text.Link
-          onPress={() => navigation.navigate('OrderItems')}
-          color="primary">
+        <Text.Link onPress={() => navigation.navigate('Home')} color="primary">
           Alterar
         </Text.Link>
       </Box>
       <Box>
-        {listFood.map(item => (
+        {selectedList.map(item => (
           <SelectedFood
             title={item.title}
             quantity={item.quantity}
@@ -93,15 +96,12 @@ export const ShoppingCart = ({ navigation }) => {
         </Text.Link>
       </Box>
       <Box flexDirection="row">
-        {locationList.map(item => (
-          <WhereToDeliverCard
-            image_url={item.image_url}
-            title={item.title}
-            address={item.address}
-            cep={item.cep}
-            key={item.id}
-          />
-        ))}
+        <WhereToDeliverCard
+          image_url={Map}
+          title={`${address.street}, ${address.number}`}
+          address={`${address.district}, ${address.city}, ${address.state} `}
+          cep={address.cep}
+        />
       </Box>
     </Screen>
   )

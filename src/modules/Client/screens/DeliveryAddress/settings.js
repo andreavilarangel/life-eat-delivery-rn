@@ -62,7 +62,7 @@ export const inputs = [
 ]
 
 export const validationSchema = Yup.object().shape({
-  cep: Yup.number().required('Informe seu CEP'),
+  cep: Yup.string().required('Informe seu CEP'),
   street: Yup.string().required('Informe o nome da sua rua'),
   number: Yup.number().required('Informe o número'),
   complement: Yup.string().required('Informe o complemento'),

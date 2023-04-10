@@ -1,7 +1,0 @@
-export * from './Login'
-export * from './CreateAccount'
-export * from './Delivery'
-export * from './ForgotPasswordPhone'
-export * from './ForgotPasswordEmail'
-export * from './SplashScreen'
-export * from './ForgotPasswordKey'
