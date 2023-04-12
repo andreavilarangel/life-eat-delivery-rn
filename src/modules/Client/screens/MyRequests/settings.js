@@ -56,7 +56,6 @@ export const awaitingListFood = [
         order: 68224,
         title: 'Escondidinho de Batata e Frango',
         quantity: 1,
-  
         value: 12,
         date: '10/01/2023',
       },

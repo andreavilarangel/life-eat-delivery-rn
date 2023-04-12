@@ -59,4 +59,21 @@ export const clientStore = create((set, get) => ({
     state: '',
   },
   setAddress: address => set({ address }),
+
+  paymentCard: null,
+  setPaymentCard: paymentCard => set({ paymentCard }),
+
+  finishedListFood: [],
+  setFinishedListFood: finishedListFood => set({ finishedListFood }),
+
+  awaitingListFood: [],
+  setAwaitingListFood: awaitingListFood => set({ awaitingListFood }),
+
+  clearListItems: {
+    address: '',
+    paymentCard: '',
+    finishedListFood: '',
+    awaitingListFood: '',
+  },
+  setClearListItems: clearListItems => set({ clearListItems }),
 }))
