@@ -5,12 +5,12 @@ import { Box } from '~/components/atoms/Box'
 import { Screen } from '~/components/molecules/Screen'
 import { Touchable } from '~/components/atoms/Touchable'
 import { RequestsCard } from '~/components/molecules/Cards/Requests'
-//import { finishedListFood, awaitingListFood } from './settings'
-import { clientStore } from '~/services/store/client'
+import { finishedListFood, awaitingListFood } from './settings'
+//import { clientStore } from '~/services/store/client'
 
 export const MyRequests = ({}) => {
   const [selected, setSelected] = useState(false)
-  const { finishedListFood, awaitingListFood } = clientStore()
+  //const { finishedListFood, awaitingListFood } = clientStore()
 
   const outOfScrollUp = () => {
     return (

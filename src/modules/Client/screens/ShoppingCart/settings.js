@@ -1,5 +1,5 @@
 import { Map } from '~/assets/images/backgrounds'
-export const paymentCard = [
+export const paymentCardList = [
   {
     id: 0,
     title: 'Pix',
