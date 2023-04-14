@@ -111,7 +111,6 @@ export const awaitingListFood = [
         order: 68224,
         title: 'Escondidinho de Batata e Frango',
         quantity: 1,
-
         value: 12,
         date: '10/01/2023',
       },
@@ -122,6 +121,14 @@ export const awaitingListFood = [
         quantity: 2,
         value: 13,
         date: '10/01/2023',
+      },
+      {
+        id: 4,
+        order: 68250,
+        title: 'Macarão na Chapa',
+        quantity: 1,
+        value: 15,
+        data: '13/04/2023',
       },
     ],
   },

@@ -39,7 +39,7 @@ export const Login = ({ navigation }) => {
   }
 
   const onLogin = () => {
-    setNavigationContainer('client')
+    setNavigationContainer('admin')
   }
 
   return (

@@ -70,7 +70,6 @@ export const ClientNavigator = () => {
       <Stack.Group>
         <Stack.Screen name="HomeTabs" component={HomeTabs} />
         <Stack.Screen name="Profile" component={Profile} />
-        <Stack.Screen name="MyRequest" component={MyRequests} />
       </Stack.Group>
       {/* Modals */}
       <Stack.Group

@@ -13,13 +13,17 @@ import { clientStore } from '~/services/store/client'
 import { Map } from '~/assets/images/backgrounds'
 
 export const ShoppingCart = ({ navigation }) => {
-  const [selected, setSelected] = useState()
+  //const [selected, setSelected] = useState()
   const { selectedList, address, paymentCard, setPaymentCard } = clientStore()
+
+  const handlePaymentSubmit = paymentCard => {
+    setPaymentCard(paymentCard)
+    navigation.navigate('MyRequest')
+  }
 
   const getTotal = () => {
     let total = 0
     selectedList.map(item => (total = total + item.value * item.quantity))
-    //console.log(selectedList)
     return total
   }
 
@@ -31,7 +35,7 @@ export const ShoppingCart = ({ navigation }) => {
       finalButton={{
         btMb: 70,
         text: 'Finalizar pedido',
-        onPress: null,
+        onPress: pg => handlePaymentSubmit(pg),
         bg: 'primary',
       }}>
       <Box

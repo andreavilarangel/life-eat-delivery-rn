@@ -60,6 +60,14 @@ export const clientStore = create((set, get) => ({
   },
   setAddress: address => set({ address }),
 
+  profile: {
+    name: '',
+    user: '',
+    email: '',
+    password: '',
+  },
+  setProfile: profile => set({ profile }),
+
   paymentCard: null,
   setPaymentCard: paymentCard => set({ paymentCard }),
 

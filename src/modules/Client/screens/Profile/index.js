@@ -6,8 +6,14 @@ import { inputs, validationSchema, initialValues } from './settings'
 import { Avatar } from '~/components/atoms/Avatar'
 import { WhereToDeliverCard } from '~/components/molecules/Cards/WhereToDeliver'
 import { locationList } from './settings'
+import { clientStore } from '~/services/store/client'
 
 export const Profile = () => {
+  const { setProfile } = clientStore()
+
+  const handleProfileSubmit = profile => {
+    setProfile(profile)
+  }
   const listHeader = () => {
     return (
       <>
@@ -43,7 +49,7 @@ export const Profile = () => {
       finalButton={{
         btMb: 70,
         text: 'Salvar',
-        onPress: null,
+        onPress: p => handleProfileSubmit(p),
         bg: 'primary',
       }}
       listHeader={listHeader}>
