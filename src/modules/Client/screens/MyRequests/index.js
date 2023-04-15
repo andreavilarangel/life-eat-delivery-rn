@@ -6,16 +6,9 @@ import { Screen } from '~/components/molecules/Screen'
 import { Touchable } from '~/components/atoms/Touchable'
 import { RequestsCard } from '~/components/molecules/Cards/Requests'
 import { finishedListFood, awaitingListFood } from './settings'
-//import { clientStore } from '~/services/store/client'
 
-export const MyRequests = ({}) => {
+export const MyRequests = () => {
   const [selected, setSelected] = useState(false)
-  // const {
-  //   finishedListFood,
-  //   setFinishedListFood,
-  //   awaitingListFood,
-  //   setAwaitingListFood,
-  // } = clientStore()
 
   const outOfScrollUp = () => {
     return (
@@ -42,7 +35,6 @@ export const MyRequests = ({}) => {
       </Box>
     )
   }
-  console.log(finishedListFood)
   return (
     <Screen
       header={{

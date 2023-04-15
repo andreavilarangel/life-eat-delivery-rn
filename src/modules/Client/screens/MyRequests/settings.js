@@ -115,7 +115,7 @@ export const finishedListFood = [
   {
     id: 1,
     order: 68545,
-    date: '15/01/2023',
+    date: '21/01/2023',
     items: [
       {
         id: 2,
@@ -123,7 +123,7 @@ export const finishedListFood = [
         title: 'Escondidinho de Batata e Frango',
         quantity: 3,
         value: 12,
-        date: '15/01/2023',
+        date: '21/01/2023',
       },
       {
         id: 3,
@@ -131,14 +131,14 @@ export const finishedListFood = [
         title: 'Escondidinho de Carne Moída',
         quantity: 2,
         value: 13,
-        date: '15/01/2023',
+        date: '21/01/2023',
       },
     ],
   },
   {
     id: 1,
     order: 68545,
-    date: '15/01/2023',
+    date: '22/01/2023',
     items: [
       {
         id: 2,
@@ -146,7 +146,7 @@ export const finishedListFood = [
         title: 'Escondidinho de Batata e Frango',
         quantity: 3,
         value: 12,
-        date: '15/01/2023',
+        date: '22/01/2023',
       },
       {
         id: 3,
@@ -154,14 +154,14 @@ export const finishedListFood = [
         title: 'Escondidinho de Carne Moída',
         quantity: 2,
         value: 13,
-        date: '15/01/2023',
+        date: '22/01/2023',
       },
     ],
   },
   {
     id: 1,
     order: 68545,
-    date: '11/01/2023',
+    date: '23/01/2023',
     items: [
       {
         id: 2,
@@ -169,7 +169,7 @@ export const finishedListFood = [
         title: 'Escondidinho de Batata e Frango',
         quantity: 3,
         value: 12,
-        date: '10/01/2023',
+        date: '23/01/2023',
       },
       {
         id: 3,
@@ -177,14 +177,14 @@ export const finishedListFood = [
         title: 'Escondidinho de Carne Moída',
         quantity: 2,
         value: 13,
-        date: '10/01/2023',
+        date: '23/01/2023',
       },
     ],
   },
   {
     id: 1,
     order: 68545,
-    date: '15/01/2023',
+    date: '24/01/2023',
     items: [
       {
         id: 2,
@@ -192,7 +192,7 @@ export const finishedListFood = [
         title: 'Escondidinho de Batata e Frango',
         quantity: 3,
         value: 12,
-        date: '15/01/2023',
+        date: '24/01/2023',
       },
       {
         id: 3,
@@ -200,7 +200,7 @@ export const finishedListFood = [
         title: 'Escondidinho de Carne Moída',
         quantity: 2,
         value: 13,
-        date: '15/01/2023',
+        date: '24/01/2023',
       },
       {
         id: 3,
@@ -208,7 +208,7 @@ export const finishedListFood = [
         title: 'Escondidinho de Carne Moída',
         quantity: 2,
         value: 13,
-        date: '15/01/2023',
+        date: '24/01/2023',
       },
       {
         id: 3,
@@ -216,7 +216,7 @@ export const finishedListFood = [
         title: 'Escondidinho de Carne Moída',
         quantity: 2,
         value: 13,
-        date: '15/01/2023',
+        date: '24/01/2023',
       },
     ],
   },

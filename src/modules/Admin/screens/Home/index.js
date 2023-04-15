@@ -8,6 +8,11 @@ import { HorizontalCalendar } from '~/components/molecules/HorizontalCalendar'
 
 export const Home = ({ navigation }) => {
   const [selectedFilter, setSelectedFilter] = useState(null)
+  const [date, setDate] = useState()
+  const [data, setData] = useState()
+
+
+
   const listHeader = () => {
     return (
       <>
