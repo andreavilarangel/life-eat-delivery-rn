@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Text } from '~/components/atoms/Text'
 import { Box } from '~/components/atoms/Box'
-import { Touchable } from '~/components/atoms/Touchable'
 import { formatCurrency } from '~/utils'
 import { Icon } from '~/components/atoms/Icon'
 
@@ -22,7 +21,7 @@ export const RequestsCard = ({
   }
 
   return (
-    <Touchable
+    <Box
       {...props}
       baseWidth
       br={8}
@@ -62,6 +61,6 @@ export const RequestsCard = ({
       <Text.SubText font="bold">
         Valor total: {formatCurrency(getTotal())}
       </Text.SubText>
-    </Touchable>
+    </Box>
   )
 }
