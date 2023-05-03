@@ -8,6 +8,9 @@ export const HorizontalFilterCalendarCard = ({
   week,
   ...props
 }) => {
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1)
+  }
   return (
     <Touchable
       {...props}
@@ -20,14 +23,14 @@ export const HorizontalFilterCalendarCard = ({
       justify="center"
       align="center"
       borderColor="primary">
-      <Text.CardText
+      <Text.ModalTitle
         mb={6}
         font="bold"
         color={selected ? 'secondary' : 'primary'}>
         {day}
-      </Text.CardText>
+      </Text.ModalTitle>
       <Text.SubText color={selected ? 'secondary' : 'primary'}>
-        {week}
+        {capitalizeFirstLetter(week)}
       </Text.SubText>
     </Touchable>
   )

@@ -3,6 +3,7 @@ import { Text } from '~/components/atoms/Text'
 import { Box } from '~/components/atoms/Box'
 import { formatCurrency } from '~/utils'
 import { Icon } from '~/components/atoms/Icon'
+import { Touchable } from '~/components/atoms/Touchable'
 
 export const RequestsCard = ({
   selected,
@@ -21,7 +22,7 @@ export const RequestsCard = ({
   }
 
   return (
-    <Box
+    <Touchable
       {...props}
       baseWidth
       br={8}
@@ -61,6 +62,6 @@ export const RequestsCard = ({
       <Text.SubText font="bold">
         Valor total: {formatCurrency(getTotal())}
       </Text.SubText>
-    </Box>
+    </Touchable>
   )
 }
