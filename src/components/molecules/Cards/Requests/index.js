@@ -6,6 +6,7 @@ import { Icon } from '~/components/atoms/Icon'
 import { Touchable } from '~/components/atoms/Touchable'
 
 export const RequestsCard = ({
+  onPress,
   selected,
   title,
   quantity,
@@ -24,6 +25,7 @@ export const RequestsCard = ({
   return (
     <Touchable
       {...props}
+      onPress={onPress}
       baseWidth
       br={8}
       p={16}

@@ -10,7 +10,7 @@ import { MethodPaymentCard } from '~/components/molecules/Cards/MethodPaymentCar
 import { ClientCard } from '~/components/molecules/Cards/ClientCard'
 
 export const OrderDetails = ({ navigation, route }) => {
-  const { params } = route
+  const { item } = route.params
   return (
     <Screen
       finalButton={{
@@ -22,29 +22,29 @@ export const OrderDetails = ({ navigation, route }) => {
         title: 'Detalhes do pedido',
       }}>
       <Text.CardTitle mt={16} font="bold">
-        Pedido Nº {params?.order}
+        Pedido Nº {item?.order}
       </Text.CardTitle>
       <Box flexDir="row" align="center">
         <Icon mr={8} color="orange" size={14} name="timer" />
         <Text.CardTitle color="orange">
-          {params?.status === 'awaiting'
+          {item?.status === 'awaiting'
             ? 'Aguardando confirmação'
             : 'Pedido confirmado'}
         </Text.CardTitle>
       </Box>
-      <Text.CardText mb={16}>Pedido realizado dia {params?.date}</Text.CardText>
+      <Text.CardText mb={16}>Pedido realizado dia: {item?.date}</Text.CardText>
       <Text.SectionTitle font="bold">Cliente</Text.SectionTitle>
 
       <Box mb={16} mt={16}>
-        <ClientCard {...params.client} />
+        <ClientCard {...item.client} />
       </Box>
       <Text.SectionTitle font="bold">Itens do pedido</Text.SectionTitle>
 
-      {listFood.map(item => (
+      {listFood.map(list => (
         <SelectedFood
-          title={item.title}
-          quantity={item.quantity}
-          key={item.id}
+          title={list.title}
+          quantity={list.quantity}
+          key={list.id}
         />
       ))}
       <Text.SectionTitle font="bold" mt={24} mb={16}>
@@ -55,7 +55,7 @@ export const OrderDetails = ({ navigation, route }) => {
       <Text.SectionTitle font="bold" mt={24} mb={16}>
         Endereço de entrega
       </Text.SectionTitle>
-      <WhereToDeliverCard {...params.address} />
+      <WhereToDeliverCard {...item.address} />
     </Screen>
   )
 }

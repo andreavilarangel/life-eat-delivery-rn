@@ -44,7 +44,14 @@ export const Home = ({ navigation }) => {
         data: awaitingListFood.filter(
           listDay => listDay.date === selectedFilter,
         ),
-        renderItem: item => <RequestsCard mt={16} key={item.id} {...item} />,
+        renderItem: item => (
+          <RequestsCard
+            onPress={() => navigation.navigate('OrderDetails', { item })}
+            mt={16}
+            key={item.id}
+            {...item}
+          />
+        ),
       }}
       listHeader={listHeader}
     />
